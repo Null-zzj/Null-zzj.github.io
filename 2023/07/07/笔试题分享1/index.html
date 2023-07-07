@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>笔试题分享1 - zzj&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="zzj&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="zzj&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="单选题：  以读写方式打开一个已存在的标准I&amp;#x2F;O流文件且不清除已有内容时应指定哪个mode参数(   )[A] r         [B] r+        [C] w+        [D]  a+"><meta property="og:type" content="blog"><meta property="og:title" content="笔试题分享1"><meta property="og:url" content="http://example.com/2023/07/07/%E7%AC%94%E8%AF%95%E9%A2%98%E5%88%86%E4%BA%AB1/"><meta property="og:site_name" content="zzj&#039;s Blog"><meta property="og:description" content="单选题：  以读写方式打开一个已存在的标准I&amp;#x2F;O流文件且不清除已有内容时应指定哪个mode参数(   )[A] r         [B] r+        [C] w+        [D]  a+"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2023-07-07T08:12:58.000Z"><meta property="article:modified_time" content="2023-07-07T08:17:06.849Z"><meta property="article:author" content="Null-zzj"><meta property="article:tag" content="linux"><meta property="article:tag" content="c"><meta property="article:tag" content="apue"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/07/%E7%AC%94%E8%AF%95%E9%A2%98%E5%88%86%E4%BA%AB1/"},"headline":"笔试题分享1","image":["http://example.com/img/og_image.png"],"datePublished":"2023-07-07T08:12:58.000Z","dateModified":"2023-07-07T08:17:06.849Z","author":{"@type":"Person","name":"Null-zzj"},"publisher":{"@type":"Organization","name":"zzj's Blog","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"单选题：  以读写方式打开一个已存在的标准I&#x2F;O流文件且不清除已有内容时应指定哪个mode参数(   )[A] r         [B] r+        [C] w+        [D]  a+"}</script><link rel="canonical" href="http://example.com/2023/07/07/%E7%AC%94%E8%AF%95%E9%A2%98%E5%88%86%E4%BA%AB1/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="zzj&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-07-07T08:12:58.000Z" title="7/7/2023, 4:12:58 PM">2023-07-07</time>发表</span><span class="level-item"><time dateTime="2023-07-07T08:17:06.849Z" title="7/7/2023, 4:17:06 PM">2023-07-07</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">笔试题</a></span><span class="level-item">14 分钟读完 (大约2099个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">笔试题分享1</h1><div class="content"><p>单选题：</p>
+<ol>
+<li><p>以读写方式打开一个已存在的标准I&#x2F;O流文件且不清除已有内容时应指定哪个mode参数(   )<br>[A] r         [B] r+        [C] w+        [D]  a+</p>
+<span id="more"></span>
+<p>2 操作系统提供给用户程序的一组”特殊”接口，用户程序可以通过这组”特殊”接口来获得操作系统内核提供的特殊服务。这组”特殊”接口被称为( )<br>A 函数    B api   C 方法    D系统调用</p>
+</li>
+<li><p>以下哪种方法无法查看进程的信息 (  )<br>[A] ps         [B] 查看&#x2F;proc目录         [C] kill          [D] top</p>
+</li>
+<li><p>fork()的返回值不可能是(  )<br>[A] -1             [B] 0             [C] 1            [D] 大于10000的正整数</p>
+</li>
+<li><p>下列哪个是不带缓存的(  )<br>[A] stdin       [B] stdout       [C] stderr       [D]  都不是  </p>
+</li>
+<li><p>下列哪个函数无法传递进程结束时的状态 (  )<br>[A]close         [B] exit          [C] _exit       [D] return</p>
+</li>
+<li><p>以下哪种用法可以等待接收进程号为pid的子进程的退出状态 (  )<br> [A]  waitpid(pid, &amp;status, 0)         [B]  waitpid(pid, &amp;status, WNOHANG)<br>  [C]  waitpid(-1, &amp;status, 0)          [D]  waitpid(-1, &amp;status, WNOHANG)</p>
+</li>
+<li><p>文件权限0662另外一种表示方法是 (  )<br>[A] rw-rw-rwx    [B] r–r–rw-    [C] rw-rw–w-   [D] rw-rw-r–</p>
+</li>
+<li><p>下列对无名管道描述错误的是 (  )<br>[A] 半双工的通信模式<br>[B] 有固定的读端和写端<br>[C] 可以使用lseek函数<br>[D] 只存在于内存中</p>
+</li>
+</ol>
+<p>10.下列对于有名管道描述错误的是 (  )<br>[A] 可以用于互不相关的进程间<br>[B] 通过路径名来打开有名管道<br>[C] 在文件系统中可见<br>[D] 管道内容保存在磁盘上</p>
+<ol start="11">
+<li><p>下列不属于用户进程对信号的响应方式的是 ()<br>[A] 忽略信号      [B] 保存信号       [C] 捕捉信号       [D] 按缺省方式处理</p>
+</li>
+<li><p>不能被用户进程屏蔽的信号是 (  )<br>[A] SIGINT        [B] SIGKILL        [C] SIGQUIT         [D] SIGILL </p>
+</li>
+<li><p>默认情况下，不会终止进程的信号是 (  )<br>[A] SIGINT        [B] SIGKILL         [C] SIGALRM        [D]  SIGCHLD</p>
+</li>
+</ol>
+<p>14 命令（）可以显示进程的父进程号<br>A ps aux        B ps -l C ps -t     D 以上都不可以</p>
+<p>15 创建线程使用的api是（）<br>A pthread_cancel        B pthread_join      C pthread_exit      D pthread_create</p>
+<p>答案：D D C C C A A C C D B B D B D</p>
+<p>判断题<br>1.每个进程的进程号和该进程的父进程的进程号在该进程执行期间不会改变 (  )<br>2.要想让父、子进程执行不同的代码段，唯一的办法是调用exec （）<br>3.宏观上看，子进程被创建后从fork()的下一条语句开始执行 (  )<br>4.子进程的进程号等于父进程的进程号加1 (  )<br>5.执行_exit()函数时不会清理IO缓冲 (  )<br>6.exec函数族可以创建一个新的进程来执行指定的程序 (  )<br>7.wait函数无法接收子进程退出的状态 (  )<br>8.无名管道只能用于有亲缘关系的进程 (  )<br>9.对命名管道的读写严格遵循先进先出的规则 (  )<br>10.信号既可以发给前台进程也可以发给后台进程 (  )<br>11.可以用signal()向指定的进程发信号 （  ）<br>12.子进程不会共享父进程在fork前打开的文件描述符  (  )<br>13.消息队列可以按照消息类型读取消息 (  )<br>14.消息队列的读写只能采用阻塞的方式 (  )<br>15.共享内存是一种最为高效的进程间通信方式 (  )</p>
+<p>答案：F F T F T F F T T T F F T F T</p>
+<p>不定选择题</p>
+<ol>
+<li><p>以下对静态库和动态库描述正确的有（）<br>A 二者的代码被载入的时刻不同<br>B 静态库在程序编译时会被连接到目标代码中，程序运行时将不再需要该静态库，因此体积较大<br>C 动态库在程序编译时并不会被连接到目标代码中，而是在程序运行是才被载入，因此在程序运行时还需要动态库存在，因此代码体积较小<br>D 使用gcc -static做编译的时候，会使用静态库做静态链接</p>
+</li>
+<li><p>以下对进程、程序、线程描述正确的有（）<br>A 程序是静态的，它是一些保存在磁盘上的指令的有序集合，没有任何执行的概念<br>B 进程是一个动态的概念，它是程序执行的过程，包括创建、调度和消亡<br>C 进程是一个独立的可调度的任务<br>D 同一进程中的线程不能方便的共享数据</p>
+</li>
+<li><p>以下描述正确的有（）<br>A 在终端上按”ctrl+&quot;会产生SIGINT信号<br>B 子进程结束时，会向父进程发送SIGCHLD信号<br>C alarm()系统函数可以实现向别的进程发送14号信号<br>D 不带参数的kill命令发送的是15号信号</p>
+</li>
+</ol>
+<p>4.程序代码如下</p>
+<p>int main()<br>{<br>   pid_t  pid1,pid2;</p>
+<p>   if((pid1&#x3D;fork()) &#x3D;&#x3D; 0)  &#x2F;&#x2F;child 1<br>   {<br>       sleep(3);<br>       printf(“info1 from child process_1\n”);<br>       exit(0);<br>       printf(“info2 from child process_1\n”);<br>   }<br>   else<br>   {<br>      if((pid2&#x3D;fork()) &#x3D;&#x3D; 0)  &#x2F;&#x2F;child 2<br>      {<br>          sleep(1);<br>          printf(“info1 from child process_2\n”);<br>          exit(0);<br>      }<br>      else   &#x2F;&#x2F;parent<br>      {<br>         wait(NULL);<br>         wait(NULL);<br>         printf(“info1 from parent process\n”);<br>         printf(“info2 from parent process”);<br>         _exit(0);<br>      }<br>   }<br>}<br>程序运行后，将会出现何种结果（）<br>A<br>info1 from child process_2<br>info1 from child process_1<br>info1 from parent process</p>
+<p>B<br>info1 from child process_1<br>info1 from child process_2<br>info1 from parent process</p>
+<p>C<br>info1 from child process_2<br>info1 from child process_1<br>info1 from parent process<br>info2 from parent process</p>
+<p>D<br>info1 from child process_2<br>info1 from child process_1<br>info1 from parent process<br>info2 from child process_1</p>
+<ol start="5">
+<li><p>以下哪些是Linux的进程间的通信机制（）<br>A 无名管道(pipe) B 有名管道(fifo) C 信号(signal) D 共享内存(share memory)<br>F 消息队列(message queue) G 信号灯(semaphore) H 套接字(socket) I 全局变量</p>
+</li>
+<li><p>以下创建守护进程的步骤中，描述正确的是（）<br>A 创建子进程，父进程退出，目的之一是为创建新会话创造条件<br>B 在子进程中创建新会话，其目的是为了让守护进程与原来的会话、控制终端等彻底脱离关系，不受其影响<br>C 应当使用chdir()函数将当前目录切换为守护进程的工作根目录<br>D 使用umask函数重设文件权限掩码，其目的是使得守护进程创建新文件的时候，不受其原来父进程的影响<br>E 关闭文件描述符，其目的之一是使得守护进程不能向屏幕输出内容，以免给用户造成迷惑 </p>
+</li>
+<li><p>以下关于进程状态及切换，描述正确的有（）<br>A 处于运行态（R态）的进程被OS调度运行，从而使用CPU进行运行。因运行时间片用完，而被OS调度不再使用CPU，但仍然处于运行态<br>B 使用CPU的进程可能因为需要的资源得不到满足，而放弃CPU，进入到等待态（S态）<br>C 等待态（S态）的进程，因需要的资源得到满足，将进入R态<br>D 拥有CPU的进程，可能因为接收到SIGSTOP信号而进入到停止态（T态）<br>E 进程对应的程序运行结束后，但尚未被其父进程wait到结束状态，该进程将进入僵尸态（Z态 ）</p>
+</li>
+</ol>
+<p>答案：ABCD ABC BD A ABCDEFGH ABCDE ABCDE</p>
+<p>编程题：</p>
+<ol>
+<li>使用fork创建子进程</li>
+<li>使用pipe创建无名管道</li>
+<li>父进程接受用户从键盘输入的若干行英文字符串（每行输入不超过1024个字符），并将这些字符串原封不动的转发给无名管道（使用write）</li>
+<li>子进程从无名管道中接收父进程转发来的字符串（使用read），实现小写字母到大写字母的转换后，输出到屏幕（大小写转换可以使用C库函数toupper）</li>
+<li>当用户结束键盘输入后（即：用户按下ctrl+D），父进程应当立即关闭无名管道写端；子进程在父进程关闭无名管道后，应当立即关闭无名管道读端，然后以退出值0结束自己；父进程应当等待子进程结束后，打印子进程的退出值。</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>笔试题分享1</p><p><a href="http://example.com/2023/07/07/笔试题分享1/">http://example.com/2023/07/07/笔试题分享1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Null-zzj</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-07-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-07-07</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/linux/">linux</a><a class="link-muted mr-2" rel="tag" href="/tags/c/">c</a><a class="link-muted mr-2" rel="tag" href="/tags/apue/">apue</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2023/07/06/posix%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%B8%8Esystem-V%E4%BF%A1%E5%8F%B7%E9%87%8F/"><span class="level-item">posix信号量与system V信号量</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://github.com/Null-zzj/blig-img/blob/main/head.jpg?raw=true" alt="Null-zzj"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Null-zzj</p><p class="is-size-6 is-block">时间会让「平凡的事」变得「与众不同」</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>成都</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Null-zzj" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Null-zzj"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/Null-zzj" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://space.bilibili.com/34603824?spm_id_from=333.1007.0.0" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">bilibili</span></span><span class="level-right"><span class="level-item tag">space.bilibili.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%82%9F/"><span class="level-start"><span class="level-item">学习感悟</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/"><span class="level-start"><span class="level-item">笔试题</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"><span class="level-start"><span class="level-item">经验分享</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-07T08:12:58.000Z">2023-07-07</time></p><p class="title"><a href="/2023/07/07/%E7%AC%94%E8%AF%95%E9%A2%98%E5%88%86%E4%BA%AB1/">笔试题分享1</a></p><p class="categories"><a href="/categories/%E7%AC%94%E8%AF%95%E9%A2%98/">笔试题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-06T11:14:40.000Z">2023-07-06</time></p><p class="title"><a href="/2023/07/06/posix%E4%BF%A1%E5%8F%B7%E9%87%8F%E4%B8%8Esystem-V%E4%BF%A1%E5%8F%B7%E9%87%8F/">posix信号量与system V信号量</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%82%9F/">学习感悟</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-05T12:55:20.000Z">2023-07-05</time></p><p class="title"><a href="/2023/07/05/%E4%BD%BF%E7%94%A8sigaction%E5%AE%9E%E7%8E%B0signal/">使用sigaction实现signal</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%82%9F/">学习感悟</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-04T11:46:17.000Z">2023-07-04</time></p><p class="title"><a href="/2023/07/04/nvim%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%87%E5%BF%98/">nvim快捷键备忘</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-03T11:09:39.000Z">2023-07-03</time></p><p class="title"><a href="/2023/07/03/vscode-wsl2-%E5%AE%9E%E7%8E%B0c-cpp%E7%9A%84%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95/">vscode &amp; wsl2 实现c/cpp的多文件编译调试</a></p><p class="categories"><a href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/apue/"><span class="tag">apue</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c-cpp/"><span class="tag">c/cpp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vscode/"><span class="tag">vscode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl/"><span class="tag">wsl</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3"><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="zzj&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2023 Null-zzj</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
